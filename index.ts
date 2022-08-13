@@ -17,13 +17,15 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import "dotenv/config";
-import db from "./src/db.js";
-import server from "./src/server.js";
+import express from "express"
 
-// Syncing all the models at once..
-db.conn.sync({ force: true }).then(() => {
-	server.listen(process.env.PORT, () => {
-		console.log(`Server running on port: ${process.env.PORT} 😎`); // eslint-disable-line no-console
-	});
-});
+const server = express()
+server.use(express.json())
+
+const PORT=5000
+
+server.use("/",(_,res)=>{
+  res.json({msg:"hola edar"})
+})
+
+server.listen(PORT,()=>console.log(`Server running on PORT: ${PORT}`))
