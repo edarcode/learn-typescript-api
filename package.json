@@ -3,13 +3,12 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
-	"type": "module",
 	"scripts": {
-		"dev": "ts-node-dev --respawn --ignore-watch node_modules index.ts",
+		"tsc": "tsc",
+		"dev": "ts-node-dev index.ts",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"format": "prettier --write .",
-		"lint": "eslint . --ext .js --fix",
-		"tsc": "tsc"
+		"lint": "eslint . --ext .js --fix"
 	},
 	"repository": {
 		"type": "git",
